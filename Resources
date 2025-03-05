@@ -1,1 +1,89 @@
 To add files for different learning topics
+
+1️⃣ Basic Understanding of Networking
+Networking is fundamental for security because attacks often involve network-based exploits. You need to understand how data moves across networks, how attackers exploit protocols, and how to monitor network traffic.
+
+🔹 OSI Model (Open Systems Interconnection Model)
+The OSI model is a conceptual framework that standardizes network communication. It has 7 layers, and each plays a role in how data is sent and received over networks.
+
+OSI Model Layers (From Layer 1 to Layer 7)
+Layer	Name	Purpose	Example Protocols & Devices	Security Considerations
+7	Application	User interaction with network services	HTTP, HTTPS, FTP, SMTP, DNS	Web application vulnerabilities (SQL Injection, XSS, CSRF)
+6	Presentation	Data translation, encryption, compression	SSL/TLS, JPEG, ASCII	SSL/TLS attacks, insecure data transmission
+5	Session	Manages sessions between applications	NetBIOS, RPC, SQL sessions	Session hijacking, unauthorized access
+4	Transport	Ensures reliable data delivery (end-to-end communication)	TCP, UDP	Port scanning, DDoS attacks (UDP flood, SYN flood)
+3	Network	Routing and addressing (IP addressing, packet forwarding)	IP, ICMP, ARP, OSPF	IP Spoofing, ARP Poisoning, DDoS
+2	Data Link	MAC addressing, error detection, and handling frames	Ethernet, Wi-Fi (802.11), VLANs	MAC spoofing, Man-in-the-Middle attacks
+1	Physical	Transmission of raw data (electrical signals, radio waves)	Cables, switches, Wi-Fi, fiber optics	Physical security, wiretapping, jamming
+🔥 Why Security Analysts Need OSI Model Knowledge
+Helps troubleshoot security incidents by identifying which layer an attack targets.
+Understanding packet flow helps in detecting anomalies in network traffic.
+Helps in firewall configuration and network security device placement (IPS/IDS).
+🔹 TCP/IP Model (Transmission Control Protocol/Internet Protocol Model)
+Unlike the OSI model, the TCP/IP model is more practical and used in real-world networking. It has 4 layers (instead of 7).
+
+OSI Model	TCP/IP Model	Key Protocols
+Application (7,6,5)	Application	HTTP, HTTPS, FTP, SMTP, SSH, DNS
+Transport (4)	Transport	TCP, UDP
+Network (3)	Internet	IP, ICMP, ARP, OSPF
+Data Link (2) & Physical (1)	Network Access	Ethernet, Wi-Fi, PPP
+Key TCP/IP Security Concepts
+TCP vs. UDP: TCP ensures reliable communication (used for web traffic, email), while UDP is faster but less reliable (used in gaming, VoIP, and DDoS attacks).
+IP Addressing & Subnetting: Helps identify devices in a network and segment networks for better security.
+DNS Security: DNS spoofing, DNS hijacking, and how attackers redirect users to malicious websites.
+Packet Inspection: How firewalls and IDS/IPS inspect traffic at different layers.
+2️⃣ Operating Systems: Windows & Linux
+Operating systems are the main attack surface in cybersecurity. A security analyst must understand how each OS works, its security features, and its vulnerabilities.
+
+🔹 Windows Security for Security Analysts
+Windows is widely used in enterprises, making it a major target for cyberattacks.
+
+Key Windows Security Topics
+Windows File System: NTFS vs. FAT32 (NTFS has better security features like file permissions).
+Windows Event Logs: Found in Event Viewer, logs are crucial for security investigations.
+Security Log: Tracks login attempts, policy changes.
+System Log: Tracks OS events like crashes, reboots.
+Application Log: Tracks software-related events.
+Active Directory (AD):
+Centralized authentication & authorization system in Windows domains.
+Kerberos authentication is used to verify users securely.
+Common AD Attacks: Pass-the-Hash, Kerberoasting, Golden Ticket attacks.
+Windows Defender & Group Policies (GPOs):
+GPOs enforce security settings (password policies, software restrictions).
+Windows Defender provides built-in endpoint security.
+Windows PowerShell & Security:
+Used for automation but also exploited by attackers (PowerShell malware, Living-Off-The-Land attacks).
+🔹 Linux Security for Security Analysts
+Linux is popular for servers, networking, and security tools like Kali Linux.
+
+Key Linux Security Topics
+Linux File System & Permissions:
+Everything in Linux is a file!
+Permissions (rwx, chmod, chown) are key to securing files.
+Linux Logging:
+Logs stored in /var/log/ (e.g., /var/log/auth.log for authentication events).
+User & Group Management:
+root is the superuser; use sudo for privilege escalation.
+Important Linux Security Commands:
+iptables: Firewall settings.
+auditd: Tracks system changes.
+fail2ban: Blocks brute-force attacks.
+chkrootkit & rkhunter: Rootkit detection tools.
+3️⃣ Web Applications & Security
+Web applications are a primary attack vector since they are accessible over the internet.
+
+🔹 Common Web Security Topics
+HTTP vs HTTPS
+HTTPS encrypts data using TLS/SSL to prevent eavesdropping.
+Common Web Attacks (OWASP Top 10)
+SQL Injection (SQLi): Injecting SQL queries to manipulate databases.
+Cross-Site Scripting (XSS): Injecting malicious scripts into web pages.
+Cross-Site Request Forgery (CSRF): Forcing users to perform unwanted actions.
+Broken Authentication: Weak login mechanisms lead to unauthorized access.
+Security Misconfiguration: Default credentials, open admin panels, unpatched software.
+Cookies, Sessions, and Authentication Security
+Understanding JWT (JSON Web Tokens), session hijacking, cookie security (HttpOnly, Secure, SameSite).
+Web Security Tools
+Burp Suite: Intercepts web traffic for testing security.
+OWASP ZAP: Open-source web app scanner.
+Nikto: Web vulnerability scanner.
